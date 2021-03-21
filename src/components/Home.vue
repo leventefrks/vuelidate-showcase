@@ -247,8 +247,12 @@ export default {
       return field.error;
     },
 
-    submitForm() {
+    onFormTouch() {
       this.$v.form.$touch();
+    },
+
+    submitForm() {
+      this.onFormTouch();
       if (!this.$v.form.$invalid) {
         console.log('valid form');
       } else {
