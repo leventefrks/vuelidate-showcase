@@ -86,14 +86,14 @@
             </div>
             <div class="mb-6">
               <label
-                for="email"
+                for="age"
                 class="block mb-2 text-sm text-gray-600 dark:text-gray-400"
                 >Age</label
               >
               <input
                 type="text"
-                name="email"
-                id="email"
+                name="age"
+                id="age"
                 placeholder="your age"
                 v-model="form.age"
                 @blur="$v.form.age.$touch()"
@@ -238,8 +238,6 @@ export default {
     },
   },
 
-  computed: {},
-
   methods: {
     shouldAppendValidClass(field) {
       return !field.$invalid && field.$model && field.$dirty;
@@ -252,7 +250,7 @@ export default {
     submitForm() {
       this.$v.form.$touch();
       if (!this.$v.form.$invalid) {
-        console.log('form - submitted');
+        console.log('valid form');
       } else {
         console.log('invalid form');
       }
